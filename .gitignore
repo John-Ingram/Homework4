@@ -30,3 +30,7 @@
 *.exe
 *.out
 *.app
+*.json
+*.sqlite
+*.db
+.vs/Homework4/v16/.suo
