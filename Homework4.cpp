@@ -233,53 +233,7 @@ int main()
     cout << counter << endl;
     infile.close();
     outfile.close();
-   /* while(!infile.eof())
-    {
-            getline(infile, newline);
-            newline.erase(0, 18);
-            outfile << newline << endl;
-    }
-    getline(infile, newline);
-    pos_mdpr = newline.find("MDPR");
-    while(!infile.eof())
-    {
-            getline(infile, newline);
-            newline.erase(pos_mdpr, 8);
-            outfile << newline << endl;
-    }
-    getline(infile, newline);
-    pos_dapr = newline.find("DAPR");
-    while(!infile.eof())
-    {
-            getline(infile, newline);
-            newline.erase(pos_dapr, 8);
-            outfile << newline << endl;
-    }
-    getline(infile, newline);
-    pos_snwd = newline.find("SNWD");
-    while(!infile.eof())
-    {
-            getline(infile, newline);
-            newline.erase(pos_snwd, 8);
-            outfile << newline << endl;
-    }
-    getline(infile, newline);
-    pos_snow = newline.find("SNOW");
-    while(!infile.eof())
-    {
-            getline(infile, newline);
-            newline.erase(pos_snow, 8);
-            outfile << newline << endl;
-    }
-    getline(infile, newline);
-    pos_awnd = newline.find("AWND");
-    while(!infile.eof())
-    {
-            getline(infile, newline);
-            newline.erase(pos_awnd, 8);
-            outfile << newline << endl;
-    }
-    infile.close();*/
+
     return 0;
 }
 
