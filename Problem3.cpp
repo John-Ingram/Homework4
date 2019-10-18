@@ -20,21 +20,22 @@ int main(void)
     double max, min;
     vector<string> names, maxTemps, minTemps, maxNames, minNames;
 
-	infile.open(".\\weather_station_five_column.txt");
-	if (!infile)
-	{
-		cout << "Error. Not able to open file.";
-		system("pause");
-		return(3);
-	}
 
 	system("pause");
 	return 0;
 }
 
-void getInfo(vector<string> names, vector<string> maxTemps, vector<string> minTemps)
+void getInfo(ifstream file, vector<string> names, vector<string> maxTemps, vector<string> minTemps)
 {
-    while(!infile.eof())
+    string identifiers [3] = {"DATE", "TMAX", "TMIN"};
+    file.open(".\\weather_station_five_column.txt");
+	if (!file)
+	{
+		cout << "Error. Not able to open file.";
+		system("pause");
+		exit(1);
+	}
+    while(!file.eof())
     {
 
     }
