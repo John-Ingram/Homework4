@@ -1,5 +1,5 @@
 //
-// Find Word in random string of chars
+// 
 //
 
 #include <iostream>
@@ -8,7 +8,6 @@
 #include <string>
 #include <vector>
 #include <cstring>
-
 
 using namespace std;
 
@@ -103,4 +102,3 @@ void getInfo(string inFileName, vector<string> &names, vector<string> &times, ve
         }
     }
 }
-
