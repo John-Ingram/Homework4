@@ -1,6 +1,6 @@
-//
-// 
-//
+/* John Ingram
+   Thomas Bunney
+   Daniel Balding*/
 
 #include <iostream>
 #include <fstream>
