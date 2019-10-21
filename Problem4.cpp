@@ -6,6 +6,7 @@
 #include <cctype>
 #include <cstdlib>
 #include <cmath>
+#include <cstring>
 
 
 using namespace std;
@@ -329,8 +330,8 @@ int main(void)
 
 			cout << "The Minimum Temperature is: " << minTemp(tminF, j, station, station_name) << endl;
 			cout << "The Maximum Temperature is: " << maxTemp(tmaxF, j, station, station_name) << endl;
-			cout << "The Average Maximum Temerature is: " << sumOfTemp(tmaxF, j, station, station_name)/30.0 << endl;
-			cout << "The Average Minimum Temerature is: " << sumOfTemp(tminF, j, station, station_name)/30.0 << endl;
+			cout << "The Average Maximum Temerature is: " << sumOfTemp(tmaxF, j, station, station_name)/31.0 << endl;
+			cout << "The Average Minimum Temerature is: " << sumOfTemp(tminF, j, station, station_name)/31.0 << endl;
 
 
 			break;
@@ -339,19 +340,18 @@ int main(void)
 
 		case 5: {
 			double length;
-			int end;
+			int endName;
 			string line;
 			cout << "Enter station name, start date and end date in mm dd yyyy format" << endl;
 			getline(cin, line);
-			end = line.find("03") - 1;
+			endName = line.find("03") - 1;
 
-			station_name = line.substr()
-			cout << "Enter the beginning day 1 - 30." << endl;
-			cin >> start_day;
-			cout << "Enter the ending day 2 - 30." << endl;
-			cin >> end_day;
+			station_name = line.substr(0, endName);
+			start_day = (int)atof(line.substr(endName + 3, 2).c_str());
+			end_day = (int)atof(line.substr(endName + 14, 2).c_str());
+			
 			length = end_day - start_day;
-			// Add code here
+
 			cout << "The Minimum Temperature is: " << minTemp(tminF, j, station, station_name, start_day, end_day, daysofmarch) << endl;
 			cout << "The Maximum Temperature is: " << maxTemp(tmaxF, j, station, station_name, start_day, end_day, daysofmarch) << endl;
 			cout << "The Average Maximum Temerature is: " << sumOfTemp(tmaxF, j, station, station_name, start_day, end_day, daysofmarch)/length << endl;
