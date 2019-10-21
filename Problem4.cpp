@@ -7,6 +7,9 @@
 #include <cstdlib>
 #include <cmath>
 
+/* John Ingram
+   Thomas Bunney
+   Daniel Balding*/
 
 using namespace std;
 
