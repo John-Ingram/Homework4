@@ -8,6 +8,9 @@
 #include <cmath>
 #include <cstring>
 
+/* John Ingram
+   Thomas Bunney
+   Daniel Balding*/
 
 using namespace std;
 
