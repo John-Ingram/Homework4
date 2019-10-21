@@ -463,3 +463,44 @@ float sumOfTemp(float temps[], int elements, string stations[], string station)
 }
 
 //Add function for part 5
+
+float minTemp(float temps[], int elements, string stations[], string station, int startDay, int endDay, int days[])
+{
+	float min = 9999.0;
+
+	string realName;
+	for(int i = 0; i < elements; i++)
+	{
+		if(stations[i].find(station) != string::npos && days[i] >= startDay && days[i] <= endDay)
+		{
+			if(temps[i]< min) min = temps[i];
+		}
+	}
+	return min;
+}
+
+float maxTemp(float temps[], int elements, string stations[], string station, int startDay, int endDay, int days[])
+{
+	float max = -9999.0;
+	for(int i = 0; i < elements; i++)
+	{
+		if(stations[i].find(station) != string::npos)
+		{
+			if(temps[i] > max) max = temps[i];
+		}
+	}
+	return max;
+}
+
+float sumOfTemp(float temps[], int elements, string stations[], string station, int startDay, int endDay, int days[])
+{
+	float sum = 0;
+	for(int i = 0; i < elements; i++)
+	{
+		if(stations[i].find(station) != string::npos)
+		{
+			sum += temps[i];
+		}
+	}
+	return sum;
+}
