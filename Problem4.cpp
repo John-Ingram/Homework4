@@ -246,6 +246,7 @@ int main(void)
 				cout << "Error. Day must be between 1 and 31. " << endl;
 
 			}
+			system("pause");
 
 			break;
 
@@ -297,6 +298,7 @@ int main(void)
 
 			}
 
+			system("pause");
 
 			break;
 
@@ -314,6 +316,7 @@ int main(void)
 			// Add code here
 
 
+			system("pause");
 
 			break;
 
@@ -330,34 +333,25 @@ int main(void)
 			cout << "The Average Maximum Temerature is: " << sumOfTemp(tmaxF, j, station, station_name)/31.0 << endl;
 			cout << "The Average Minimum Temerature is: " << sumOfTemp(tminF, j, station, station_name)/31.0 << endl;
 
+			system("pause");
 
 			break;
 
 		}
 
 		case 5: {
-			int trash;
-			string line;
-			cout << "Enter station name, start date and end date in mm dd yyyy format" << endl;
-			cin >> trash;
-			cout << trash << endl;
-			cin >> end_day;
-			cout << end_day << endl;
-			cin >> trash;
-			cout << trash << endl;
+			cout << "Enter the station name." << endl;
+			getline(cin, station_name);
 
-			cin >> trash;
-			cout << trash << endl;
 
+			for (k = 0; k < station_name.length(); k++)       // Make sure it is uppercase
+				station_name[k] = toupper(station_name[k]);
+
+
+			cout << "Enter the beginning day 1 - 30." << endl;
 			cin >> start_day;
-			cout << start_day << endl;
-
-			cin >> trash;
-			cout << trash << endl;
-
-			cin >> station_name;
-			cout << station_name << endl;
-
+			cout << "Enter the ending day 2 - 30." << endl;
+			cin >> end_day;
 
 
 			cout << "The Minimum Temperature is: " << minTemp(tminF, j, station, station_name, start_day, end_day, daysofmarch) << endl;
@@ -365,6 +359,7 @@ int main(void)
 			cout << "The Average Maximum Temerature is: " << avgOfTemp(tmaxF, j, station, station_name, start_day, end_day, daysofmarch)<< endl;
 			cout << "The Average Minimum Temerature is: " << avgOfTemp(tminF, j, station, station_name, start_day, end_day, daysofmarch) << endl;
 			system("pause");
+			break;
 		}
 		}
 
