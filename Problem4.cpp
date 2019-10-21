@@ -6,7 +6,6 @@
 #include <cctype>
 #include <cstdlib>
 #include <cmath>
-#include <cstring>
 
 
 using namespace std;
@@ -28,7 +27,7 @@ float sumOfTemp(float temps[], int elements, string stations[], string station);
 //Declare function 5
 float minTemp(float temps[], int elements, string stations[], string station, unsigned int startDay, unsigned int endDay, unsigned int days[]);
 float maxTemp(float temps[], int elements, string stations[], string station, unsigned int startDay, unsigned int endDay, unsigned int days[]);
-float sumOfTemp(float temps[], int elements, string stations[], string station, unsigned int startDay, unsigned int endDay, unsigned int days[]);
+float avgOfTemp(float temps[], int elements, string stations[], string station, unsigned int startDay, unsigned int endDay, unsigned int days[]);
 
 
 
@@ -296,11 +295,6 @@ int main(void)
 			}
 
 
-
-
-
-
-
 			break;
 
 		}
@@ -339,24 +333,35 @@ int main(void)
 		}
 
 		case 5: {
-			double length;
-			int endName;
+			int trash;
 			string line;
 			cout << "Enter station name, start date and end date in mm dd yyyy format" << endl;
-			getline(cin, line);
-			endName = line.find("03") - 1;
+			cin >> trash;
+			cout << trash << endl;
+			cin >> end_day;
+			cout << end_day << endl;
+			cin >> trash;
+			cout << trash << endl;
 
-			station_name = line.substr(0, endName);
-			start_day = (int)atof(line.substr(endName + 3, 2).c_str());
-			end_day = (int)atof(line.substr(endName + 14, 2).c_str());
-			
-			length = end_day - start_day;
+			cin >> trash;
+			cout << trash << endl;
+
+			cin >> start_day;
+			cout << start_day << endl;
+
+			cin >> trash;
+			cout << trash << endl;
+
+			cin >> station_name;
+			cout << station_name << endl;
+
+
 
 			cout << "The Minimum Temperature is: " << minTemp(tminF, j, station, station_name, start_day, end_day, daysofmarch) << endl;
 			cout << "The Maximum Temperature is: " << maxTemp(tmaxF, j, station, station_name, start_day, end_day, daysofmarch) << endl;
-			cout << "The Average Maximum Temerature is: " << sumOfTemp(tmaxF, j, station, station_name, start_day, end_day, daysofmarch)/length << endl;
-			cout << "The Average Minimum Temerature is: " << sumOfTemp(tminF, j, station, station_name, start_day, end_day, daysofmarch)/length << endl;
-
+			cout << "The Average Maximum Temerature is: " << avgOfTemp(tmaxF, j, station, station_name, start_day, end_day, daysofmarch)<< endl;
+			cout << "The Average Minimum Temerature is: " << avgOfTemp(tminF, j, station, station_name, start_day, end_day, daysofmarch) << endl;
+			system("pause");
 		}
 		}
 
@@ -494,15 +499,17 @@ float maxTemp(float temps[], int elements, string stations[], string station, un
 	return max;
 }
 
-float sumOfTemp(float temps[], int elements, string stations[], string station, unsigned int startDay, unsigned int endDay, unsigned int days[])
+float  avgOfTemp(float temps[], int elements, string stations[], string station, unsigned int startDay, unsigned int endDay, unsigned int days[])
 {
 	float sum = 0;
+	int count = 0;
 	for(int i = 0; i < elements; i++)
 	{
 		if(stations[i].find(station) != string::npos && days[i] >= startDay && days[i] <= endDay)
 		{
 			sum += temps[i];
+			count++;
 		}
 	}
-	return sum;
+	return sum/count;
 }
