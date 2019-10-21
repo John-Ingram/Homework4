@@ -484,7 +484,7 @@ float maxTemp(float temps[], int elements, string stations[], string station, in
 	float max = -9999.0;
 	for(int i = 0; i < elements; i++)
 	{
-		if(stations[i].find(station) != string::npos)
+		if(stations[i].find(station) != string::npos && days[i] >= startDay && days[i] <= endDay)
 		{
 			if(temps[i] > max) max = temps[i];
 		}
@@ -497,7 +497,7 @@ float sumOfTemp(float temps[], int elements, string stations[], string station, 
 	float sum = 0;
 	for(int i = 0; i < elements; i++)
 	{
-		if(stations[i].find(station) != string::npos)
+		if(stations[i].find(station) != string::npos && days[i] >= startDay && days[i] <= endDay)
 		{
 			sum += temps[i];
 		}
